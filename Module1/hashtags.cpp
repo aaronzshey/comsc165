@@ -9,7 +9,7 @@ int main() {
   ifstream input;
   cout << "Enter the name of the file to access to: ";
   getline(cin, filename);
-  input.open(filename.c_str());
+  input.open(filename);
   if (input.is_open()) {
     while (input >> numFromFile) {
       for (int i = 0; i < numFromFile; i++) {
