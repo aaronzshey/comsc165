@@ -1,22 +1,26 @@
+// Example program
 #include <iostream>
 #include <string>
 using namespace std;
-
-int getRadius();
-double showArea(int);
-
+void getRadius(double&);
+void showArea(double);
 
 int main() {
-int userRadius = getRadius();
-cout << showArea(userRadius);
+
+double radius;
+getRadius(radius);
+showArea(radius);
 }
 
-int getRadius() {
-int value;
-cin >> value;
-return value;
+void getRadius(double& r) {
+
+cout << "Enter the radius of your circle: ";
+cin >> r;
+
 }
 
-double showArea(int radius) {
-return pow(radius, 2) * M_PI;    
+void showArea(double r) {    
+double area;
+area = M_PI * pow(r,2);
+cout << "The area of the circle is " << area;
 }
