@@ -5,7 +5,7 @@ void getRadius(double&);
 void findArea(double);
 void findDiameter(double);
 void findCircumference(double);
-void print(float);
+void print(double);
 
 
 int main() {
@@ -38,7 +38,7 @@ void findCircumference(double radius) {
     double circumference = 2 * 3.14159 * radius;
     cout << "The circumference is: " << circumference << "\n";
 }
-void print(float input) {
+void print(double input) {
     double input;
     getRadius(input);
     findArea(input);
