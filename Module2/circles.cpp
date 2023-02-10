@@ -2,10 +2,10 @@
 using namespace std;
 
 void getRadius(double &);
-void findArea(double);
-void findDiameter(double);
-void findCircumference(double);
-void print(double);
+double findArea(double);
+double findDiameter(double);
+double findCircumference(double);
+void print(double = 1.0);
 
 int main() {
   double radius;
@@ -20,25 +20,21 @@ void getRadius(double &radius) {
     if (radius <= 0) {
       cout << "Error - only positive values allowed.  Try again.\n";
       continue;
-    } else
-      cout << "Circle radius: " << radius << "\n";
-    break;
+    } else break;
   } while (true);
 }
-void findArea(double radius) {
-  double area = 3.14159 * radius * radius;
-  cout << "Circle area: " << area << "\n";
+double findArea(double radius) {
+  return 3.14159 * radius * radius;
 }
-void findDiameter(double radius) {
-  double diameter = 2 * radius;
-  cout << "Circle diameter: " << diameter << "\n";
+double findDiameter(double radius) {
+  return 2 * radius;
 }
-void findCircumference(double radius) {
-  double circumference = 2 * 3.14159 * radius;
-  cout << "Circle circumference: " << circumference << "\n";
+double findCircumference(double radius) {
+	return 2 * 3.14159 * radius;
 }
 void print(double input) {
-  findArea(input);
-  findDiameter(input);
-  findCircumference(input);
+	cout << "Circle radius: " << input << "\n";
+  cout << "Circle area: " << findArea(input) << "\n";
+  cout << "Circle diameter: " << findDiameter(input) << "\n";
+  cout << "Circle circumference: " << findCircumference(input) << "\n";
 }
