@@ -24,8 +24,12 @@ load(vec);
 void load(vector<double> &input, string = "numbers.txt") {
 				
 }
-double findHighest(const vector<double> &);
-double findAverage(const vector<double> &);
+double findHighest(const vector<double> &vec) {
+return vec[vec.size()];
+}
+double findAverage(const vector<double> &vec) {
+return vec[0];
+}
 void sort(vector<double> &);
 void print(const vector<double> &);
 
