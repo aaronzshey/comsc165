@@ -13,8 +13,10 @@ int main() {
     for (int j = i + 1; j < 7; j++) {
       if (a[j] < minValue) {
         minValue = a[j];
+
         minIndex = j;
       }
+
     }
     a[minIndex] = a[i];
     a[i] = minValue;
