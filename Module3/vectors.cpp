@@ -8,17 +8,14 @@ void load(vector<double> &, string = "numbers.txt");
 double findHighest(const vector<double> &);
 double findAverage(const vector<double> &);
 void sort(vector<double> &);
-void print(const vector<double> &);
+void print(const vector<double> &, double, double);
 
 int main() {
 
   vector<double> vec;
   load(vec);
   sort(vec);
-  cout << "The sorted numbers: ";
-  print(vec);
-  cout << "High number: " << findHighest(vec) << "\n";
-  cout << "Average number: " << findAverage(vec) << "\n";
+  print(vec, findHighest(vec), findAverage(vec));
 }
 
 void load(vector<double> &vec, string filename) {
@@ -58,9 +55,12 @@ void sort(vector<double> &vec) {
   }
 }
 
-void print(const vector<double> &vec) {
+void print(const vector<double> &vec, double high, double average) {
+	cout << "The sorted numbers:\n";
   for (double i : vec) {
     cout << i << " ";
   }
   cout << "\n";
+	cout << "High number: " << high << "\n";
+	cout << "Average number: " << average << "\n";
 }
