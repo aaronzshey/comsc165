@@ -8,6 +8,13 @@ void printVec(const vector<int> &a) {
   cout << "\n";
 }
 
+void printVecDouble(const vector<double> &a) {
+  for (int i : a) {
+    cout << i;
+  }
+  cout << "\n";
+}
+
 void swap(int &first, int &second) {
   int temp = first;
   first = second;
