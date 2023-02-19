@@ -31,7 +31,15 @@ void load(vector<double> &vec, string filename) {
     cout << "Error: file " << filename << " not found.\n";
   }
 }
-double findHighest(const vector<double> &vec) { return vec[vec.size() - 1]; }
+double findHighest(const vector<double> &vec) {
+  double highest = vec[0];
+  for (double i : vec) {
+    if (i > highest) {
+      highest = i;
+    }
+  }
+  return highest;
+}
 double findAverage(const vector<double> &vec) {
   double sum;
   for (double i : vec)
@@ -56,11 +64,11 @@ void sort(vector<double> &vec) {
 }
 
 void print(const vector<double> &vec, double high, double average) {
-	cout << "The sorted numbers:\n";
+  cout << "The sorted numbers:\n";
   for (double i : vec) {
     cout << i << " ";
   }
   cout << "\n";
-	cout << "High number: " << high << "\n";
-	cout << "Average number: " << average << "\n";
+  cout << "High number: " << high << "\n";
+  cout << "Average number: " << average << "\n";
 }
