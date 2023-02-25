@@ -13,7 +13,12 @@ int main() {
   int *arr = makeArray(size);
   //* not needed on rvalue because lvalue is also a pointer
   *arr = *fillArray(arr, size);
-  print(arr, size, findAverage(arr, size));
+	float *average = findAverage(arr, size);
+  print(arr, size, average);
+	delete[] arr;
+	delete size;
+	delete average;
+	
 }
 
 int *getSize() {
