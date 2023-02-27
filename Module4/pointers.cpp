@@ -3,7 +3,7 @@ using namespace std;
 
 int *getSize();
 int *makeArray(int *);
-int *fillArray(int *, int *);
+void fillArray(int *, int *);
 float *findAverage(int *, int *);
 void print(int *, int *, float *);
 
@@ -12,7 +12,8 @@ int main() {
                          // address returned by getSize;
   int *arr = makeArray(size);
   //* not needed on rvalue because lvalue is also a pointer
-  *arr = *fillArray(arr, size);
+  //*arr = *fillArray(arr, size);
+	fillArray(arr, size);
 	float *average = findAverage(arr, size);
   print(arr, size, average);
 	delete[] arr;
@@ -40,7 +41,7 @@ int *makeArray(int *size) {
   return a;
 }
 
-int *fillArray(int *arr, int *size) {
+void fillArray(int *arr, int *size) {
 
   for (int i = 0; i < *size; i++) {
 
@@ -49,7 +50,7 @@ int *fillArray(int *arr, int *size) {
     cin >> in;
     *(arr + i) = in;
   }
-  return arr;
+  //return arr;
 };
 
 float *findAverage(int *arr, int *size) {
