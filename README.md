@@ -1,2 +1,2 @@
 # comsc165
-Where i keep all my assignments for comsc165
+Where I keep all my assignments for COMSC165
