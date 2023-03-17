@@ -19,11 +19,10 @@ int main() {
     sum += sales;
     salsaList[i] = {names[i], sales};
   }
-  cout << "Salsa Name: Amount Sold"
-       << "\n\n";
+  cout << "\nSalsa Name:\tAmount Sold\n";
 
   for (int i = 0; i < sz; i++) {
-    cout << salsaList[i].name << " " << salsaList[i].sold << "\n";
+    cout << salsaList[i].name << "\t\t" << salsaList[i].sold << "\n";
   }
 
   cout << "\n"
