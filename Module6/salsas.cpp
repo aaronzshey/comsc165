@@ -8,16 +8,21 @@ struct Salsa {
 };
 
 int main() {
-  vector<string> names = {"mild", "medium", "sweet", "hot", "zesty"};
-  int sz = names.size();
-  Salsa salsaList[sz];
+  const int sz = 5;
+  Salsa salsaList[sz] = {
+        {"mild"},
+        {"medium"},
+        {"sweet"},
+        {"hot"},
+        {"zesty"},
+    };;
   int sum = 0;
   for (int i = 0; i < sz; i++) {
     int sales = 0;
-    cout << "Enter jars of " << names[i] << " sold: ";
+    cout << "Enter jars of " << salsaList[i].name << " sold: ";
     cin >> sales;
     sum += sales;
-    salsaList[i] = {names[i], sales};
+		salsaList[i].sold=sales;
   }
   cout << "\nSalsa Name:\tAmount Sold\n";
 
