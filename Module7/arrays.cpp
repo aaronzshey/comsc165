@@ -7,7 +7,6 @@ struct Point {
   int x;
   int y;
 };
-void dumb(Point *a) { cout << a[0].x; }
 int arrayToFile(string f, Point *a, int s) {
   fstream g(f, ios::binary | ios::out);
   if (g) {
@@ -42,7 +41,6 @@ int main() {
   string fileName = "arrays.dat";
   const int SIZE = 4;
   Point ar[SIZE] = {{3, 2}, {4, 6}, {-1, 2}, {0, -5}};
-  dumb(ar);
   arrayToFile(fileName, ar, SIZE);
   fileToArray(fileName, ar, SIZE);
 }
