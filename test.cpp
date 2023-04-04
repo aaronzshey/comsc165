@@ -5,7 +5,7 @@
 using namespace std;
 
 int *f(int *s) {
-	cout << *s;
+  cout << *s;
   int *a;
   return a;
 }
@@ -14,13 +14,12 @@ int main() {
   int *p;
   p = new int;
   *p = 5;
-	
-	int q = *f(*p);
 
-	q[0]=0;
-	q[1]=1;
-	
-	
+  int q = *f(*p);
+
+  q[0] = 0;
+  q[1] = 1;
+
   cout << "Hello World"
        << "\n";
   vector<int> v;
