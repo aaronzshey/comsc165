@@ -49,8 +49,8 @@ public:
 		Integers temp;
 		temp.setP(*p);
 		temp.setQ(*q);
-    *(temp.p) += 2;
-    *(temp.q) += 2;
+    *p += 2;
+    *q += 2;
     return temp;
   }
   friend ostream& operator<<(ostream &o, const Integers &rhs) {
