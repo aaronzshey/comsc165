@@ -13,8 +13,12 @@ public:
   }
 
   Integers(const Integers &rhs) {
-    *p = *(rhs.p);
-    *q = *(rhs.q);
+    p = new int;
+    q = new int;
+    *p = rhs.getP();
+    *q = rhs.getQ();
+    //    *p = *(rhs.p);
+    //    *q = *(rhs.q);
   }
   ~Integers() {
     delete p;
@@ -46,14 +50,14 @@ public:
     return *this;
   }
   Integers operator++(int) {
-		Integers temp;
-		temp.setP(*p);
-		temp.setQ(*q);
+    Integers temp;
+    temp.setP(*p);
+    temp.setQ(*q);
     *p += 2;
     *q += 2;
     return temp;
   }
-  friend ostream& operator<<(ostream &o, const Integers &rhs) {
+  friend ostream &operator<<(ostream &o, const Integers &rhs) {
     o << "[" << *(rhs.p) << "," << *(rhs.q) << "]"
       << "\n";
     return o;
