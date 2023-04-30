@@ -19,15 +19,15 @@ public:
   int getY() const { return y; }
 };
 class Bar : public Foo {
-protected:
+private:
   int z;
 
 public:
   Bar(int a, int b, int c) : Foo(a, b) { z = c; }
   void setZ(int c) { z = c; }
   int getZ() const { return z; }
-  int getAverage() const {
-    int sum, average;
+  double getAverage() const {
+    double sum, average;
     sum = x + y + z;
     average = sum / 3;
     return average;
