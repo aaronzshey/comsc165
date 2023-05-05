@@ -16,7 +16,7 @@ public:
     while (head != nullptr) {
       temp = head;
       head = temp->next;
-      delete head;
+      delete temp; // head?
     }
   }
 
@@ -36,8 +36,8 @@ public:
     n = new Node;
     n->c = c;
     n->next = nullptr;
-    while (p != nullptr && p->c == c) {
-      q = q->next;
+    while (p != nullptr && p->c < c) {
+      q = p; 
       p = p->next;
     }
     if (q == nullptr) {
