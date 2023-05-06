@@ -16,7 +16,7 @@ public:
     while (head != nullptr) {
       temp = head;
       head = temp->next;
-      delete temp; // head?
+      delete temp; 
     }
   }
 
