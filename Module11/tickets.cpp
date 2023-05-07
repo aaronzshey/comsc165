@@ -23,23 +23,23 @@ public:
     if (!frontOfLine) {
       frontOfLine = newTicket;
     } else {
-      someTicket = frontOfLine;
-    }
-    while (someTicket->next) {
-      someTicket = someTicket->next;
+      while (someTicket->next) {
+        someTicket = someTicket->next;
+      }
       someTicket->next = newTicket;
     }
   }
 
   int removeFromLine() {
-    Node *someTicket, previousTicket;
+    Node *someTicket, *previousTicket;
     if (!frontOfLine) {
       return -1;
     } else {
-      return frontOfLine->ticketNumber;
       someTicket = frontOfLine->next;
-      delete frontOfLine;
-      frontOfLine = someTicket;
+      while (someTicket->next != nullptr) {
+        someTicket = someTicket->next;
+      }
+      delete someTicket;
     }
   }
 
