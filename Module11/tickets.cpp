@@ -16,7 +16,9 @@ public:
   }
   virtual ~Line() { clearLine(); }
   void addToLine() {
+    ticketCounter++;
     Node *newTicket, *someTicket;
+    someTicket = nullptr;
     newTicket = new Node;
     newTicket->ticketNumber = ticketCounter;
     newTicket->next = nullptr;
@@ -31,26 +33,27 @@ public:
   }
 
   int removeFromLine() {
-    Node *someTicket, *previousTicket;
+    ticketCounter--;
+    Node *tempTicket;
+    tempTicket = nullptr;
     if (!frontOfLine) {
       return -1;
+    } else if (!frontOfLine->next) {
+      tempTicket = frontOfLine;
+      delete frontOfLine;
+      return tempTicket->ticketNumber;
+      delete tempTicket;
     } else {
-      someTicket = frontOfLine->next;
-      while (someTicket->next != nullptr) {
-        someTicket = someTicket->next;
-      }
-      delete someTicket;
+      tempTicket = frontOfLine;
+      frontOfLine = frontOfLine->next;
+      delete tempTicket;
+      return frontOfLine->ticketNumber;
     }
   }
-
   int lengthOfLine() {
-    Node *i = frontOfLine;
-    int j = 0;
-    while (i != nullptr) {
-      j += 1;
-    }
-    return j;
+    return ticketCounter;
   }
+  
   void clearLine() {
     Node *temp = nullptr;
     while (frontOfLine != nullptr) {
@@ -59,14 +62,18 @@ public:
       delete temp;
     }
   }
+
 };
 int main() {
   Line line;
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 4; i++) {
     line.addToLine();
   }
+
   for (int i = 0; i < 5; i++) {
     cout << "Now serving: " << i << "\n";
-    cout << "Number of people in line: " << line.lengthOfLine();
+    line.removeFromLine();
+    cout << "Number of people in line: " << line.lengthOfLine() << "\n";
   }
+
 }
